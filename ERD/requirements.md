@@ -11,4 +11,4 @@ This schema is designed to ensure a robust, scalable, and normalized data struct
 ## Database Diagram
 
 
-![airbnb_erd](https://drive.google.com/drive/folders/1GK4Ym3G0Gq6adKtb4DRSzS06xvrnQyJi)
+![airbnb_erd](https://drive.google.com/file/d/1wmjVLBzPvO3zMrSz0_m1OvHTOZuwFRDe/view)
