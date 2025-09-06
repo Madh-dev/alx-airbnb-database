@@ -17,3 +17,27 @@ SELECT
 FROM properties p
 LEFT JOIN bookings b ON p.property_id = b.property_id
 GROUP BY p.property_id, p.name;
+
+
+
+
+WITH PropertyBookingCounts AS (
+    SELECT
+        p.property_id,
+        p.name AS property_name,
+        COUNT(b.booking_id) AS booking_count
+    FROM
+        Property AS p
+    LEFT JOIN
+        Booking AS b ON p.property_id = b.property_id
+    GROUP BY
+        p.property_id, p.name
+)
+SELECT
+    property_name,
+    booking_count,
+    ROW_NUMBER() OVER (ORDER BY booking_count DESC) AS property_row_number
+FROM
+    PropertyBookingCounts
+ORDER BY
+    property_row_number;
